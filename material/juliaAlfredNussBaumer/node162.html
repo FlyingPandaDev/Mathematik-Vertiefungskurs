@@ -1,0 +1,319 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta8 (1.43)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Julia-Menge</TITLE>
+<META NAME="description" CONTENT="Julia-Menge">
+<META NAME="keywords" CONTENT="java">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta8">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="java.css">
+
+<LINK REL="next" HREF="http://www.alfred-nussbaumer.at/ikt/informatik/wpf/JAVA/javahtml/node163.html">
+<LINK REL="previous" HREF="http://www.alfred-nussbaumer.at/ikt/informatik/wpf/JAVA/javahtml/node161.html">
+<LINK REL="up" HREF="http://www.alfred-nussbaumer.at/ikt/informatik/wpf/JAVA/javahtml/node158.html">
+<LINK REL="next" HREF="http://www.alfred-nussbaumer.at/ikt/informatik/wpf/JAVA/javahtml/node163.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2501"
+  HREF="http://www.alfred-nussbaumer.at/ikt/informatik/wpf/JAVA/javahtml/node163.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2497"
+  HREF="http://www.alfred-nussbaumer.at/ikt/informatik/wpf/JAVA/javahtml/node158.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2491"
+  HREF="http://www.alfred-nussbaumer.at/ikt/informatik/wpf/JAVA/javahtml/node161.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2499"
+  HREF="http://www.alfred-nussbaumer.at/ikt/informatik/wpf/JAVA/javahtml/node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> N&auml;chste Seite:</B> <A NAME="tex2html2502"
+  HREF="http://www.alfred-nussbaumer.at/ikt/informatik/wpf/JAVA/javahtml/node163.html">Langton-Ameise</A>
+<B> Aufw&auml;rts:</B> <A NAME="tex2html2498"
+  HREF="http://www.alfred-nussbaumer.at/ikt/informatik/wpf/JAVA/javahtml/node158.html">Grafik</A>
+<B> Vorherige Seite:</B> <A NAME="tex2html2492"
+  HREF="http://www.alfred-nussbaumer.at/ikt/informatik/wpf/JAVA/javahtml/node161.html">Mandelbrot-Menge</A>
+ &nbsp <B>  <A NAME="tex2html2500"
+  HREF="http://www.alfred-nussbaumer.at/ikt/informatik/wpf/JAVA/javahtml/node1.html">Inhalt</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION000112400000000000000">
+Julia-Menge</A>
+</H3>
+<P>
+<FONT SIZE="-2">Der französische Mathematiker <I>Gaston Julia</I> hat zu Beginn des 20. Jahrhunderts eine bestimmte Menge von komplexen Zahlen untersucht. Diese komplexen Zahlen haben die Eigenschaft, dass sie bei der Iteration 
+</FONT>
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+z_{n+1} = {z_n}^2+c
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="333" HEIGHT="28" BORDER="0"
+ SRC="img48.png"
+ ALT="\begin{displaymath}
+z_{n+1} = {z_n}^2+c
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<P>
+<FONT SIZE="-2">konvergieren. Stellt man die komplexen Zahlen, die diese Eigenschaft aufweisen, farblich dar, so erhält man komplizierte FLächenmuster, deren Gestalt von der Wahl der Konstanten <IMG
+ WIDTH="13" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img49.png"
+ ALT="$c$"> abhängt. Man sich leicht davon überzeugen, dass eine geringfügig anders gewählte Konstante <IMG
+ WIDTH="13" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img49.png"
+ ALT="$c$"> zu einer deutlich anderen Julia-Menge führt.
+</FONT>
+<P>
+<FONT SIZE="-2">Ähnlich wie bei der Mandelbrot-Menge (siehe vorangegangenes Beispiel) wählen wir ein Quadrat aus der komplexen Zahlenebene aus (Eckpunkt <TT>(xmin, ymin)</TT>, Kantenlänge <TT>k</TT>) und geben eine Konstante <TT>c = (a,b)</TT> an. Das (im Allgemeinen relativ kleine) Quadrat der kopmlexen Zahlenebene wird auf einen größeren Bildschirmbereich ``gezoomt'' (im Beispiel auf 200x200 Pixel). Daraus bestimmen wir die Schrittweite <TT>ds = k / 200</TT> für die Iterationen.
+</FONT>
+<P>
+<FONT SIZE="-2">Ist ein Punkt Element der Julia-Menge (verhält er sich bei der Iteration konvergent), so wird er schwarz eingefärbt. Um die ``divergenten'' Punkte klassifizieren zu können, untersucht man, wie ``rasch'' sie gegen <IMG
+ WIDTH="22" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img46.png"
+ ALT="$\infty$"> streben. Weist die kopmlexe Zahl schon nach weniger als 10 Iterationen einen Betrag größer als 2 auf, so wird der zugerhörige Punkt rot eingefärbt. Verlässt der Punkt Kreis mit Radius 2 erst nach mehr als 10 aber mit weniger als 20 Iterationen, so zeichnen wir ihn grün, usf. Dies ist im Programmcode durch eine Reihe von <TT>if</TT> - Abfragen realisiert.
+</FONT>
+<P>
+<FONT SIZE="-2"></FONT><PRE>
+import java.awt.*;
+import java.awt.event.*;
+
+public class julia extends Frame implements ActionListener {
+
+    TextField aein;
+    TextField bein;
+    TextField xminein;
+    TextField yminein;
+    TextField kein;
+    Button ok;
+
+    double a;
+    double b;
+    double xmin;
+    double ymin;
+    double k;
+
+    public static void main(String arguments[]) {
+        julia proggi = new julia();
+
+        WindowListener wl = new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        };
+        proggi.addWindowListener(wl);
+        proggi.setLocation(100,100);
+        proggi.setSize(500,300);
+        proggi.show();
+    }
+
+    public julia() {
+        super("Juliamenge");
+        setLayout(new BorderLayout());
+        Panel panel = new Panel();
+
+        panel.setLayout(new GridLayout(6,2,10,20));
+
+        Label l1 = new Label("a");
+        panel.add(l1);
+        aein = new TextField("-1",8);
+        panel.add(aein);
+        Label l2 = new Label("b");
+        panel.add(l2);
+        bein = new TextField("0.28",8);
+        panel.add(bein);
+        Label l3 = new Label("xmin");
+        panel.add(l3);
+        xminein = new TextField("-1",8);
+        panel.add(xminein);
+        Label l4 = new Label("ymin");
+        panel.add(l4);
+        yminein = new TextField("-1",8);
+        panel.add(yminein);
+        Label l5 = new Label("k");
+        panel.add(l5);
+        kein = new TextField("2",8);
+        panel.add(kein);
+        ok = new Button ("ok");
+        panel.add(ok);
+        ok.addActionListener(this);
+
+        add("East",panel);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == ok) {
+            werteuebernehmen();
+            repaint();
+        }
+
+    }
+
+    public void werteuebernehmen() {
+        a = Double.valueOf(aein.getText()).doubleValue();
+        b = Double.valueOf(bein.getText()).doubleValue();
+        xmin = Double.valueOf(xminein.getText()).doubleValue();
+        ymin = Double.valueOf(yminein.getText()).doubleValue();
+        k = Double.valueOf(kein.getText()).doubleValue();
+    }
+
+    public void paint (Graphics bs) {
+        double ds;
+        double x;
+        double y;
+        double x1;
+        double y1;
+        double xx;
+        int s;
+        int r;
+        int zaehler;
+
+        werteuebernehmen();
+
+        ds = k/200;
+
+        x = xmin;
+
+        for (s=0; s&lt;=200; s++) {
+            y=ymin;
+            for (r=0; r&lt;=200; r++) {
+                x1=x;
+                y1=y;
+                zaehler=0;
+                while ((zaehler &lt; 100) &amp;&amp; (Math.sqrt(x1*x1+y1*y1)&lt;2)) {
+                    zaehler++;
+                    xx=x1*x1-y1*y1+a;
+                    y1=2*x1*y1+b;
+                    x1=xx;
+                }
+                if (zaehler &gt;= 100) {
+                    bs.setColor(Color.black);
+                    bs.drawLine(s+50,r+50,s+50,r+50);
+                }
+                if (zaehler &lt; 10) {
+                    bs.setColor(Color.red);
+                    bs.drawLine(s+50,r+50,s+50,r+50);
+                }
+                else if (zaehler &lt; 20) {
+                    bs.setColor(Color.green);
+                    bs.drawLine(s+50,r+50,s+50,r+50);
+                }
+                else if (zaehler &lt; 30) {
+                    bs.setColor(Color.lightGray);
+                    bs.drawLine(s+50,r+50,s+50,r+50);
+                }
+                else if (zaehler &lt; 40) {
+                    bs.setColor(Color.blue);
+                    bs.drawLine(s+50,r+50,s+50,r+50);
+                }
+                else if (zaehler &lt; 50) {
+                    bs.setColor(Color.yellow);
+                    bs.drawLine(s+50,r+50,s+50,r+50);
+                }
+                else if (zaehler &lt; 60) {
+                    bs.setColor(Color.magenta);
+                    bs.drawLine(s+50,r+50,s+50,r+50);
+                }
+                else if (zaehler &lt; 70) {
+                    bs.setColor(Color.gray);
+                    bs.drawLine(s+50,r+50,s+50,r+50);
+                }
+                else if (zaehler &lt; 80) {
+                    bs.setColor(Color.orange);
+                    bs.drawLine(s+50,r+50,s+50,r+50);
+                }
+                else if (zaehler &lt; 90) {
+                    bs.setColor(Color.white);
+                    bs.drawLine(s+50,r+50,s+50,r+50);
+                }
+                else if (zaehler &lt;100) {
+                    bs.setColor(Color.cyan);
+                    bs.drawLine(s+50,r+50,s+50,r+50);
+                }
+                y=y+ds;
+            }
+            x=x+ds;
+        }
+    }
+}
+</PRE><FONT SIZE="-2"></FONT>
+<P>
+<FONT SIZE="-2">Die <TT>ActionListener</TT>-Schnittstelle definiert die Methode <TT>actionPerformed()</TT>, die beim Eintreten eines Ereignisses aufgerufen wird (im Programm das ``Drücken der OK-Schaltfläche'': In der Methode <TT>werteuebernehmen()</TT> holt die Methode <TT>getText()</TT> die Eingaben aus den Textfeldern. Methoden der <TT>Double</TT> - Klasse liefern schließlich die WSerte für die Konstante <TT>c = (a,b)</TT> und für den Ausschnitt der kopmlexen Zahlenebene.
+</FONT>
+<P>
+<FONT SIZE="-2">Im Konstruktor sind der Titel des verwendeten Frames und die Anordnung der einzelnen Elemente durch Layouts festgelegt: Die GUI-Elemente <TT>Label</TT>, <TT>TextField</TT> und <TT>Button</TT> werden mit Hilfe des <TT>GridLayout()</TT> in Reihen und Spalten platziert. Dieses <TT>GridLayout()</TT> ist selbst an ein <TT>Panel</TT> gebunden, das in den ``East''-Teil eines <TT>BorderLayout()</TT> eingefügt wurde.
+</FONT>
+<P>
+
+<P>
+<BR>
+
+<P>
+<FONT SIZE="-2">
+<!-- MATH
+ $\includegraphics[width=8cm]{julia.ps}$
+ -->
+<IMG
+ WIDTH="361" HEIGHT="216" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.png"
+ ALT="\includegraphics[width=8cm]{julia.ps}">
+</FONT>
+<P>
+<FONT SIZE="-2">
+Die scharz codierten Punkte stellen die Julia-Menge dar. Ob bei der Iteration eine zusammenhängende Julia-Menge entsteht oder nicht, hängt davon ab, ob der Parameter <IMG
+ WIDTH="13" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img49.png"
+ ALT="$c$"> ein Element der Mandelbrotmenge ist. Durch die Wahl geeigneter Parameter kann die Julia-Menge für kleinere Abschnitte berechnet werden. Dabei erkennt man die Selbstähnlichkeit der Strukturen. Daräüber hinaus sind mehr oder weniger stark ``verzerrte'' Apfelmännchen zu erkennen...
+</FONT>
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2501"
+  HREF="http://www.alfred-nussbaumer.at/ikt/informatik/wpf/JAVA/javahtml/node163.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2497"
+  HREF="http://www.alfred-nussbaumer.at/ikt/informatik/wpf/JAVA/javahtml/node158.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2491"
+  HREF="http://www.alfred-nussbaumer.at/ikt/informatik/wpf/JAVA/javahtml/node161.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2499"
+  HREF="http://www.alfred-nussbaumer.at/ikt/informatik/wpf/JAVA/javahtml/node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> N&auml;chste Seite:</B> <A NAME="tex2html2502"
+  HREF="http://www.alfred-nussbaumer.at/ikt/informatik/wpf/JAVA/javahtml/node163.html">Langton-Ameise</A>
+<B> Aufw&auml;rts:</B> <A NAME="tex2html2498"
+  HREF="http://www.alfred-nussbaumer.at/ikt/informatik/wpf/JAVA/javahtml/node158.html">Grafik</A>
+<B> Vorherige Seite:</B> <A NAME="tex2html2492"
+  HREF="http://www.alfred-nussbaumer.at/ikt/informatik/wpf/JAVA/javahtml/node161.html">Mandelbrot-Menge</A>
+ &nbsp <B>  <A NAME="tex2html2500"
+  HREF="http://www.alfred-nussbaumer.at/ikt/informatik/wpf/JAVA/javahtml/node1.html">Inhalt</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Alfred Nussbaumer
+2003-02-10
+</ADDRESS>
+</BODY>
+</HTML>
