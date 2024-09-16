@@ -1,0 +1,55 @@
+body {
+font-family:Verdana,Arial,sans-serif;
+color:#000000;
+font-size:11px;
+line-height:14pt;
+}
+
+body.menu {
+background-color:#EFEFEF;
+font-size:11px;
+margin-left:1px;
+margin-top:5px;
+}
+
+body.standard {
+background-color:#F9F9F9;
+background-image:url(bilder/backgrou.jpg);
+}
+
+h1 {font-size:20px; text-align:left; line-height:14pt;}
+h2 {font-size:18px; font-weight:bold; text-align:left; line-height:17pt;}
+
+b.inv {color:#EBEBEB; font-size:11px;} /*Textfarbe = Hintergrundfarbe (Mathe-Bereich: Formeln)*/
+
+p.jmdheader {font-size:22px; line-height:15pt;}
+p.subheader {font-size:18px; line-height:15pt;}
+
+a:link {color:#0032DC; text-decoration:none; font-size:11px;}
+a:visited {color:#0032DC; text-decoration:none; font-size:11px;}
+a:active {color:#0078FA; text-decoration:none; font-size:11px;}
+a:hover {color:#0078FA; text-decoration:underline; font-size:11px;}
+
+a.jmdfoot:link {color:#000000; font-size:10px; text-decoration:none;}
+a.jmdfoot:visited {color:#000000; font-size:10px; text-decoration:none;}
+a.jmdfoot:active {color:#000000; font-size:10px; text-decoration:none;}
+a.jmdfoot:hover {color:#787878; font-size:10px; text-decoration:underline;}
+
+table {font-size:11px; line-height:14pt;}
+table.standard {border-width:0px; border-style:none; border-color:#F0F0F0; font-size:11px;}
+table.standard td {border-width:0px; border-style:none; border-color:#F0F0F0; font-size:11px;}
+
+td.headline {background-color:#EBEBEB; border-width:0px; border-style:none; border-color:#EBEBEB; font-size:11px;}
+td.standard {border-width:0px; border-style:none; border-color:#F0F0F0; font-size:11px;}
+td.start    {background-color:#FFFFFF; border-width:0px; border-style:none; border-color:#FFFFFF; font-size:11px;}
+td.menu     {background-color:#FFFFFF; border-width:0px; border-style:none; border-color:#FFFFFF; font-size:11px;}
+td.hr	    {background-color:#FFFFFF; border-width:0px; border-style:none; border-color:#FFFFFF; font-size:1px; background-image:url(https://www.informatik.uni-leipzig.de/~meiler/Schuelerseiten.dir/DPlotzki/bilder/dotpipe.gif);}
+td.thinborder {background-color:#EBEBEB; border-width:1px; border-style:solid; border-color:#000000; font-size:11px;}
+
+table.dark  {background-color:#EBEBEB; border-width:0px; border-style:none; border-color:#EBEBEB; font-size:11px;}
+table.dark td {background-color:#EBEBEB; border-width:0px; border-style:none; border-color:#EBEBEB; font-size:11px;}
+table.footer{background-image:url(bilder/pipedots.gif); border-width:0px; border-style:none; border-color:#EBEBEB; font-size:10px;}
+table.thinborder {background-color:#F5F5F5; border-width:1px; border-style:solid; border-color:#000000; font-size:11px;}
+
+hr {color:#000000; border-bottom-width: 1pt; border-style: solid; border-color: #000000; width: 100%;}
+hr.light {color:#D2D2D2; border-bottom-width: 1pt; border-style: solid; border-color: #D2D2D2; width: 100%;}

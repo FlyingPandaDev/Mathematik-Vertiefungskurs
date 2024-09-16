@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Language" content="de">
+<meta name="author" content="David Plotzki">
+<meta name="publisher" content="JMD Software">
+<meta name="copyright" content="Copyright 1999-2003 JMD">
+<meta name="keywords" content="mandelbrot, mandelbrotmenge, berechnung, grafik, darstellung, grafisch, zoom, vergroesserung, farbe, farben, flaecheninhalt, monte, carlo, montecarlo, simulation, methode, iteration">
+<meta name="description" content="Mandelbrotmenge: Berechnung und Darstellung, Flaecheninhalt ueber Monte-Carlo-Simulation">
+<meta name="audience" content="Alle">
+<meta name="robots" content="index,follow">
+<meta name="revisit-after" content="30 days">
+<title>Mandelbrotmenge</title>
+<base target="_self">
+
+<link rel=stylesheet type="text/css" href="../standard.css">
+</head>
+
+<body class="standard">
+
+
+<p class="jmdheader">Die Mandelbrotmenge</p>
+<hr>
+<p>F&uuml;r diesen Abschnitt werden Kenntnisse mit <b><a href="https://www.informatik.uni-leipzig.de/~meiler/Schuelerseiten.dir/DPlotzki/html/complex.htm">komplexen
+Zahlen</a></b>  empfohlen.</p>
+<p>&nbsp;</p>
+
+<table class="standard" width="100%" cellspacing="10">
+<tr>
+<td><img border="0" src="../bilder/mdbkoord.gif" alt="Mandelbrotmenge in der komplexen Ebene"></td>
+<td valign="top">
+<p>Dies ist die grafische Darstellung der Mandelbrotmenge. Sie besteht aus komplexen Zahlen, die alle ein bestimmtes Kriterium erf&uuml;llen. Deshalb wird die Mandelbrotmenge in einer &quot;komplexen Ebene&quot; dargestellt: die x-Achse
+entspricht dem Real-Teil einer komplexen Zahl; die y-Achse dem Imagin&auml;rteil.</p>
+
+<p>Man durchl&auml;uft der Reihe nach viele Punkte innerhalb der komplexen Ebene und pr&uuml;ft, ob sie innerhalb der Mandelbrotmenge liegen. Es gibt also vorerst nur zwei Arten von Punkten: die einen Punkte liegen nicht in der Menge und werden nicht gef&auml;rbt. Die anderen liegen innerhalb der Menge und erhalten zum Beispiel die Farbe Schwarz.</p>
+</td>
+</tr>
+</table>
+
+
+<p><b>Wie findet man nun heraus, ob die Punkte in
+der Mandelbrotmenge liegen ?</b></p>
+<p>Man w&auml;hlt einen Punkt C aus der
+komplexen Ebene. C ist nun eine
+komplexe Zahl, mit dem Realteil als x-Koordinate und dem Imagin&auml;rteil als y-Koordinate: 
+c = <i>x + i*y</i>.</p>
+<p>Die folgende Formel wird nun immer
+wieder auf Z angewendet:</p>
+
+<table class="thinborder">
+<tr><td height="30">
+Z<sub>n</sub> = Z<sub>n-1</sub><sup>2</sup> + C
+</td></tr>
+</table>
+
+<p>Man nennt diesen Vorgang eine &quot;Iteration&quot;: die Formel wird wiederholt
+angewendet. Wir beginnen mit <i>Z<sub>0</sub>=0. Z<sub>1</sub></i> erh&auml;lt somit
+den Wert C. Das ganze beginnt von neuem: das &quot;neue&quot; Z (Z<sub>n</sub>)
+erh&auml;lt nun den Wert des &quot;alten&quot; Z (Z<sub>n-1</sub>) zum Quadrat plus
+C.</p>
+<p>Dieser Vorgang kann nat&uuml;rlich nicht unendlich
+lange wiederholt werden. Nach beispielsweise 20 Iterationen wird der Vorgang
+abgebrochen. Ist nun der Betrag von Z<sub>20</sub> kleiner als 2, so nimmt man
+an, dass der Punkt C innerhalb der Mandelbrotmenge liegt. &Uuml;berschreitet der
+Betrag den Wert 2, so nimmt man an, dass der Punkt au&szlig;erhalb der Menge liegt
+und man kann die Iteration schon fr&uuml;her abbrechen.</p>
+<p>&nbsp;</p>
+
+<p><b>Wie kommen die Farben zustande ?</b></p>
+
+<table class="standard" width="100%" cellspacing="10">
+<tr>
+<td><img border="0" src="../bilder/mdbcol.gif" alt="farbige Darstellung der Mandelbrotmenge"></td>
+<td valign="top">
+<p>An f&uuml;r sich sieht die Mandelbrotmenge einfarbig aus. Es ist m&ouml;glich,
+den Punkten au&szlig;erhalb der Mandelbrotmenge Farben zuzuweisen. Sie liegen alle
+au&szlig;erhalb der Mandelbrotmenge, das hei&szlig;t, die Iterationsschleife konnte schon
+fr&uuml;her abgebrochen werden. Die Farbe der Punkte ist nun abh&auml;ngig von den
+Iterationen, die der Computer ben&ouml;tigt hat, um herauszufinden, dass sie
+au&szlig;erhalb der Menge liegen.</p>
+<p>Im Bild links wurde den verschiedenen Iterationsbereichen
+je eine Farbe zugeordnet. Ganz au&szlig;en um die Mandelbrotmenge erstreckt sich
+ein blauer Kreis. Der Computer ben&ouml;tigte f&uuml;r die Punkte in dieser Zone nur
+eine Iteration, um herauszufinden, dass die Punkte nicht in der Menge liegen. Es
+folgen Abstufungen von violett: der Computer ben&ouml;tigte erst zwei, dann drei
+Iterationen, 
+usw.</p>
+<p>Die Punkte im schwarzen Bereich liegen innerhalb
+der Mandelbrotmenge. Hier ben&ouml;tigte der Computer alle Iterationen, weil die
+Schleife nicht vorher abgebrochen werden konnte: der Betrag war nie gr&ouml;&szlig;er als
+zwei.</p>
+</td>
+</tr>
+</table>
+
+
+
+<p><b>Vergr&ouml;&szlig;erung</b></p>
+<p>Eine Mandelbrotmenge kann beliebig stark
+vergr&ouml;&szlig;ert werden. Man muss jedoch beachten, die Iterationszahl h&ouml;her zu
+setzen, sonst erreicht man bald gewisse Grenzen. Durch die Erh&ouml;hung kann die
+feine Struktur am Rand der Mandelbrotmenge untersucht werden.</p>
+<p>Ein Bereich der Mandelbrotmenge wurde vergr&ouml;&szlig;ert: Links wurde die vorgegebene Anzahl von 20 Iterationen beibehalten. Beim mittleren Bild wurde die Anzahl auf 100 Iterationen erh&ouml;ht: der Ausschnitt ist nun wesentlich komplexer.</p>
+<table class="standard" width="100%">
+<tr>
+	<td width="50%" align="center"><img border="0" src="../bilder/20_it.gif" alt="20 Iterationen"></td>
+	<td width="50%" align="center"><img border="0" src="../bilder/100_it.gif" alt="100 Iterationen"></td>
+</tr>
+</table><br>
+<p>Man sollte jedoch immer eines im Kopf behalten:
+je h&ouml;her die Iterationszahl, desto h&ouml;her wird die Rechenzeit des Computers. Dies l&auml;sst sich besonders gut am schwarzen Bereich der
+Mandelbrotmenge demonstrieren. Der Computer ben&ouml;tigt dort immer die maximale
+Anzahl an Iterationen. Man muss
+deshalb abw&auml;gen: will man die Menge sehr schnell oder sehr gut darstellen?
+Beides zusammen k&ouml;nnte bei diesem Rechenverfahren ein Problem ergeben.</p>
+<p>&nbsp;</p>
+<p><b>Fl&auml;cheninhalt einer Darstellung der Mandelbrotmenge</b></p>
+<p>Die Bestimmung eines N&auml;herungswertes f&uuml;r den
+Fl&auml;cheninhalt einer Darstellung der Mandelbrotmenge &uuml;ber die <a href="https://www.informatik.uni-leipzig.de/~meiler/Schuelerseiten.dir/DPlotzki/html/montec.htm">Monte-Carlo-Methode</a> ist relativ
+einfach: Man z&auml;hlt einfach die Punkte, die schwarz gef&auml;rbt sind und
+teilt sie durch die Gesamtpixel, die auf dem Bildschirm dargestellt werden. Multipliziert man den erhaltenen Wert mit 100,
+so erh&auml;lt man die prozentuale Wahrscheinlichkeit, mit der die Punkte in den Kreis fallen.
+Die Genauigkeit des N&auml;herungswertes f&uuml;r den Fl&auml;cheninhalt h&auml;ngt von der
+Anzahl der Iterationen ab. In der folgenden Tabelle sind die berechneten N&auml;herungswerte
+f&uuml;r den Fl&auml;cheninhalt im Verh&auml;ltnis zu den verwendeten Iterationen dargestellt:</p>
+<table class="standard" width="100%">
+  <tr>
+    <td width="9%" align="left"><b>Iterationen</b></td>
+    <td width="9%" align="center">0</td>
+    <td width="9%" align="center">1</td>
+    <td width="9%" align="center">10</td>
+    <td width="9%" align="center">50</td>
+    <td width="9%" align="center">100</td>
+    <td width="9%" align="center">200</td>
+    <td width="9%" align="center">500</td>
+    <td width="9%" align="center">1000</td>
+    <td width="10%" align="center">10 000</td>
+    <td width="10%" align="center">100 000</td>
+  </tr>
+  <tr>
+    <td width="9%" align="left"><b>N&auml;herungswert</b></td>
+    <td width="9%" align="center">100%</td>
+    <td width="9%" align="center">39,9%</td>
+    <td width="9%" align="center">12,25 %</td>
+    <td width="9%" align="center">9,9%</td>
+    <td width="9%" align="center">9,65%</td>
+    <td width="9%" align="center">9,51%</td>
+    <td width="9%" align="center">9,44%</td>
+    <td width="9%" align="center">9,42%</td>
+    <td width="10%" align="center">9,39%</td>
+    <td width="10%" align="center">9,39%</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>Am Anfang, bei 0 Iterationen, ist die
+Wahrscheinlichkeit, mit der die Punkte in die Mandelbrotmenge fallen, gleich
+100%; denn bei Null Iterationen rechnet der Computer einfach alle Punkte zur
+Mandelbrotmenge. Je mehr Iterationen verwendet werden, desto klarer wird die
+Form und desto genauer wird der Fl&auml;cheninhalt:</p>
+<table class="standard" width="100%">
+  <tr>
+    <td width="10%" align="center"><img border="0" src="../bilder/1_it.gif" alt="1 It"></td>
+    <td width="10%" align="center"><img border="0" src="../bilder/2_it.gif" alt="2 It"></td>
+    <td width="10%" align="center"><img border="0" src="../bilder/3_it.gif" alt="3 It"></td>
+    <td width="10%" align="center"><img border="0" src="../bilder/4_it.gif" alt="4 It"></td>
+    <td width="10%" align="center"><img border="0" src="../bilder/5_it.gif" alt="5 It"></td>
+    <td width="10%" align="center"><img border="0" src="../bilder/6_it.gif" alt="6 It"></td>
+    <td width="10%" align="center"><img border="0" src="../bilder/7_it.gif" alt="7 It"></td>
+    <td width="10%" align="center"><img border="0" src="../bilder/8_it.gif" alt="8 It"></td>
+    <td width="10%" align="center"><img border="0" src="../bilder/9_it.gif" alt="9 It"></td>
+  </tr>
+  <tr>
+    <td width="10%" align="center">1 Iteration</td>
+    <td width="10%" align="center">2</td>
+    <td width="10%" align="center">3</td>
+    <td width="10%" align="center">4</td>
+    <td width="10%" align="center">5</td>
+    <td width="10%" align="center">6</td>
+    <td width="10%" align="center">7</td>
+    <td width="10%" align="center">8</td>
+    <td width="10%" align="center">9</td>
+  </tr>
+</table>
+<br>
+<p><b>Julia-Mengen</b></p>
+<p>Julia-Mengen werden fast genauso berechnet wie die Mandelbrotmenge:</p>
+<table class="thinborder">
+<tr><td height="30">
+Z<sub>n+1</sub> = Z<sub>n</sub><sup>2</sup> + C
+</td></tr>
+</table>
+<p>Der Unterschied zur Berechnung der Mandelbrotmenge ist, dass der Punkt C hier f&uuml;r jeden Punkt der komplexen Ebene konstant bleibt. Z erh&auml;lt nun die Koordinaten eines beliebigen Punktes auf der komplexen Ebene, w&auml;hrend C f&uuml;r bei der Berechnung aller Punkte gleich bleibt. C ist auch hier eine komplexe Zahl und kann ebenfalls einen beliebigen Punkt auf der komplexen Ebene darstellen; muss aber bei allen Berechnungen der Punkte der zuk&uuml;nftigen Juliamenge den gleichen Wert haben; darf sich also nie &auml;ndern. Da C beliebige Koordinaten besitzen kann, ist jedem Punkt der komplexen Ebene eine eigene Juliamenge zugeordnet - und dadurch auch jedem Punkt der Mandelbrotmenge.</p>
+
+<hr>
+<p align="left"><b>Mandelbrot Calculator</b></p>
+<p><b>Version 3.1: ab Windows 95:</b><br>
+Berechnet und zeichnet Mandelbrot- und Juliamengen; errechnet mit Hilfe der Monte-Carlo-Methode den Fl&auml;cheninhalt der dargestellten Mengen<br>
+<br>
+<img border="0" src="../bilder/schwarzr.gif" alt="-"><a href="https://www.informatik.uni-leipzig.de/~meiler/Schuelerseiten.dir/DPlotzki/progs/mdb/mdb_src.zip">Quellcode
+      herunterladen (C++-Quellcode; WinAPI)</a><br>
+<img border="0" src="../bilder/schwarzr.gif" alt="-"><a href="https://www.informatik.uni-leipzig.de/~meiler/Schuelerseiten.dir/DPlotzki/progs/mdb/mdb.zip">Programm
+      herunterladen (.zip-Datei, Windows)</a>
+</p>
+
+<br>
+<p><i>Eine sehr gute Website &uuml;ber die Julia- und Mandelbrotmenge ist <a href="http://www.geocities.com/CapeCanaveral/2854/" target="_blank">Fabio Cesaris Fractal Explorer</a>.</i></p>
+<hr>
+
+<!-- Beginn Pipeline -->
+<table  class="footer" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td width="0%" height="14" valign="middle"><img border="0" src="../bilder/pipe.gif" alt="Pipeline"></td>
+<td width="100%" height="14" valign="middle"><div align="right"><a href="https://www.informatik.uni-leipzig.de/~meiler/Schuelerseiten.dir/DPlotzki/index.htm" target="_top" class="jmdfoot">Mathe-Startseite</a></div></td>
+</tr>
+</table>
+<!-- Ende Pipeline -->
+
+</body>
+</html>
