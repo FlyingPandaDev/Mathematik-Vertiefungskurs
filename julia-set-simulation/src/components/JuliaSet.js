@@ -131,3 +131,4 @@ const JuliaSet = () => {
 };
 
 export default JuliaSet;
+// Hinweis: Eigentliche Implimentierung der Logik ist hier.
