@@ -2,7 +2,6 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class mandel extends Frame {
-
   public static void main(String arguments[]) {
     mandel proggi = new mandel();
 
