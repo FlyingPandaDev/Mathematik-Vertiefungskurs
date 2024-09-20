@@ -84,8 +84,8 @@ const JuliaSet = () => {
     <div>
       <canvas
         ref={canvasRef}
-        width={800}
-        height={800}
+        width={1000}
+        height={1000}
         onWheel={handleZoom}
         style={{ border: "1px solid black" }}
       ></canvas>
