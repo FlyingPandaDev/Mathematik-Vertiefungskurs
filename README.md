@@ -15,10 +15,14 @@ https://www.oracle.com/java/technologies/downloads/
 2. Ausfuehren der Projekte / Wie bekomme ich das "Ding" zum Funktionieren?
 
 2.1 JavaScript
-Befehl: npm run dev
+(Man muss sich im passenden Verzeichnis befinden.)
+Befehl:
+`npm run dev`
 
 2.2 Java
-Befehl: java (dateiname).java
+Befehl:
+`java julia.java`
+`java mandel.java`
 
 3. Bei der zweiten Java Version die Hinweise des Autors beachten.
    Diese Version ist inkludiert, da seine Loesung auf jeden Fall eleganter ist als meine.
