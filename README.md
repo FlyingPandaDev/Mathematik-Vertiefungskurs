@@ -24,5 +24,8 @@ Befehl:
 `java julia.java`
 `java mandel.java`
 
-3. Bei der zweiten Java Version die Hinweise des Autors beachten.
-   Diese Version ist inkludiert, da seine Loesung auf jeden Fall eleganter ist als meine.
+3. Die Datei FraktalErforscher.java macht im Prinzip das Selbe wie die anderen zwei Dateien (julia.java und mandel.java).
+
+- Philosophie:
+  -> Simplifizieren der Anwendung des Codes. (Nur noch ein Befehl notwendig statt zwei.)
+  -> Einfacheres Design.
