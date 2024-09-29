@@ -29,3 +29,7 @@ Befehl:
 - Philosophie:
   -> Simplifizieren der Anwendung des Codes. (Nur noch ein Befehl notwendig statt zwei.)
   -> Einfacheres Design.
+
+4. Swing only Datei. (Statt Mix aus Swing und AWT...)
+
+- Einfach eine Alternative.
